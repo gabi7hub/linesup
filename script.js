@@ -1,24 +1,49 @@
 document.addEventListener('DOMContentLoaded', () => {
-    // Menu Hamburguer
+    
+    // --- LÓGICA DO MENU HAMBURGUER ---
     const hamburger = document.getElementById('hamburger');
     const navLinks = document.getElementById('nav-links');
 
     hamburger.addEventListener('click', () => {
+        // Abre/Fecha o menu
         navLinks.classList.toggle('active');
-        // Animação básica das linhas do hamburguer
-        hamburger.children[0].style.transform = navLinks.classList.contains('active') ? 'rotate(45deg) translateY(10px)' : 'none';
-        hamburger.children[2].style.transform = navLinks.classList.contains('active') ? 'rotate(-45deg) translateY(-10px)' : 'none';
-        hamburger.children[1].style.opacity = navLinks.classList.contains('active') ? '0' : '1';
+        // Transforma o ícone em "X"
+        hamburger.classList.toggle('open');
     });
 
-    // Reveal on Scroll
-    const observer = new IntersectionObserver((entries) => {
+    // Fecha o menu ao clicar em um link (importante para mobile)
+    document.querySelectorAll('.nav-links a').forEach(link => {
+        link.addEventListener('click', () => {
+            navLinks.classList.remove('active');
+            hamburger.classList.remove('open');
+        });
+    });
+
+    // --- ANIMAÇÃO DE REVEAL (SURGIR AO SCROLL) ---
+    const revealElements = document.querySelectorAll('.reveal');
+    
+    const revealObserver = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
                 entry.target.classList.add('active');
             }
         });
-    }, { threshold: 0.1 });
+    }, { 
+        threshold: 0.15 // Começa a animação quando 15% do elemento aparece
+    });
 
-    document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+    revealElements.forEach(el => revealObserver.observe(el));
+
+    // --- HEADER DINÂMICO ---
+    // Faz o menu mudar de transparência ao rolar
+    window.addEventListener('scroll', () => {
+        const nav = document.querySelector('nav');
+        if (window.scrollY > 50) {
+            nav.style.background = 'rgba(8, 8, 8, 0.95)';
+            nav.style.padding = '12px 0';
+        } else {
+            nav.style.background = 'rgba(8, 8, 8, 0.85)';
+            nav.style.padding = '18px 0';
+        }
+    });
 });
