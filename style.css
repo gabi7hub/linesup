@@ -1,34 +1,50 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500&family=Space+Grotesk:wght@300;400;600&display=swap');
+/* IMPORTAÇÃO DE FONTES: Inter (Leitura Clara) e Space Grotesk (Design Moderno) */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Space+Grotesk:wght@300;500;700&display=swap');
 
 :root {
-    --brand: #F3E0A7; 
-    --bg: #080808; 
-    --card: #121212;
-    --text: #FFFFFF;
-    --text-muted: #888888;
-    --transition: all 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+    /* PALETA DE CORES */
+    --brand: #F3E0A7;         /* Amarelo Manteiga (Sua logo) */
+    --bg-main: #080808;       /* Preto profundo para foco total */
+    --bg-card: #121212;       /* Cinza chumbo para separação visual clara */
+    --text-white: #FFFFFF;    /* Contraste máximo para leitura */
+    --text-muted: #A0A0A0;    /* Texto secundário para reduzir cansaço visual */
+    --border: rgba(243, 224, 167, 0.1);
+    
+    /* EFEITOS */
+    --transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+    --glass: rgba(8, 8, 8, 0.85);
 }
 
-* { margin: 0; padding: 0; box-sizing: border-box; }
-
-body {
-    background-color: var(--bg);
-    color: var(--text);
-    font-family: 'Inter', sans-serif;
-    overflow-x: hidden;
+/* RESET E ACESSIBILIDADE */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
     -webkit-font-smoothing: antialiased;
 }
 
-/* Navbar sofisticada */
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background-color: var(--bg-main);
+    color: var(--text-white);
+    font-family: 'Inter', sans-serif; /* Fonte focada em legibilidade */
+    line-height: 1.6;
+    overflow-x: hidden;
+}
+
+/* --- BARRA DE NAVEGAÇÃO SUPERIOR --- */
 nav {
     position: fixed;
     width: 100%;
     top: 0;
     z-index: 2000;
-    padding: 20px 0;
-    border-bottom: 1px solid rgba(255,255,255,0.05);
-    background: rgba(8, 8, 8, 0.8);
-    backdrop-filter: blur(20px);
+    padding: 18px 0;
+    background: var(--glass);
+    backdrop-filter: blur(15px);
+    border-bottom: 1px solid var(--border);
 }
 
 .nav-container {
@@ -40,70 +56,178 @@ nav {
     padding: 0 5%;
 }
 
-.logo-link img { height: 30px; width: auto; }
+.logo-link img {
+    height: 32px; /* Tamanho sofisticado e discreto */
+    width: auto;
+    transition: var(--transition);
+}
 
-.nav-links { display: flex; align-items: center; gap: 40px; }
+.logo-link:hover {
+    opacity: 0.8;
+}
+
+.nav-links {
+    display: flex;
+    align-items: center;
+    gap: 40px;
+}
+
 .nav-links a {
     color: var(--text-muted);
     text-decoration: none;
-    font-size: 0.7rem;
+    font-size: 0.75rem;
     text-transform: uppercase;
     letter-spacing: 2px;
+    font-weight: 500;
     transition: var(--transition);
 }
-.nav-links a:hover { color: var(--brand); }
 
-/* Hamburguer Mobile */
+.nav-links a:hover {
+    color: var(--brand);
+}
+
+/* --- BOTÕES SOFISTICADOS (ESTILO GOOGLE PREMIUM) --- */
+.btn {
+    padding: 12px 24px;
+    background: var(--brand);
+    color: #000;
+    font-size: 0.75rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    border-radius: 4px; /* Leve curvatura chique */
+    text-decoration: none;
+    border: 1px solid var(--brand);
+    transition: var(--transition);
+    display: inline-block;
+}
+
+.btn:hover {
+    background: transparent;
+    color: var(--brand);
+    transform: translateY(-2px);
+    box-shadow: 0 10px 20px rgba(243, 224, 167, 0.1);
+}
+
+.btn-outline {
+    background: transparent;
+    color: var(--text-white);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+/* --- MENU HAMBURGUER (MOBILE) --- */
 .hamburger {
     display: none;
     cursor: pointer;
     flex-direction: column;
     gap: 6px;
+    z-index: 2100;
 }
+
 .hamburger span {
-    width: 25px;
+    width: 24px;
     height: 1px;
     background: var(--brand);
     transition: var(--transition);
 }
 
-/* Botões Pequenos e Elegantes */
-.btn {
-    padding: 10px 22px;
-    background: var(--brand);
-    color: #000;
-    font-size: 0.7rem;
-    font-weight: 600;
+/* --- ESTRUTURA DE LAYOUT --- */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 5%;
+}
+
+section {
+    padding: 120px 0;
+}
+
+h1, h2, h3 {
+    font-family: 'Space Grotesk', sans-serif;
+    font-weight: 300; /* Fontes finas transmitem luxo */
     text-transform: uppercase;
-    letter-spacing: 1px;
-    border-radius: 2px;
-    text-decoration: none;
-    border: 1px solid var(--brand);
+    letter-spacing: -1px;
+    line-height: 1.1;
+}
+
+.text-brand { color: var(--brand); }
+
+/* --- CARDS E IMAGENS --- */
+.grid-2 {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+    align-items: center;
+}
+
+.card {
+    background: var(--bg-card);
+    padding: 50px;
+    border-radius: 8px;
+    border: 1px solid var(--border);
     transition: var(--transition);
 }
-.btn:hover { background: transparent; color: var(--brand); }
 
-/* Grid e Layout */
-.container { max-width: 1200px; margin: 0 auto; padding: 0 5%; }
-section { padding: 120px 0; }
-h1, h2 { font-family: 'Space Grotesk', sans-serif; font-weight: 300; text-transform: uppercase; letter-spacing: -1px; }
-
-/* Responsividade Mobile */
-@media (max-width: 768px) {
-    .hamburger { display: flex; }
-    .nav-links {
-        position: fixed;
-        top: 0; right: -100%;
-        height: 100vh; width: 80%;
-        background: var(--bg);
-        flex-direction: column;
-        justify-content: center;
-        transition: var(--transition);
-        border-left: 1px solid var(--brand);
-    }
-    .nav-links.active { right: 0; }
-    .grid-2 { grid-template-columns: 1fr !important; text-align: center; }
+.card:hover {
+    border-color: var(--brand);
+    transform: translateY(-5px);
 }
 
-.reveal { opacity: 0; transform: translateY(30px); transition: var(--transition); }
-.reveal.active { opacity: 1; transform: translateY(0); }
+.img-fluid {
+    width: 100%;
+    height: auto;
+    border-radius: 4px;
+    filter: grayscale(100%); /* Estética premium */
+    transition: 1s ease;
+}
+
+.img-fluid:hover {
+    filter: grayscale(0%);
+}
+
+/* --- ANIMAÇÕES DE ENTRADA (REVEAL) --- */
+.reveal {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: var(--transition);
+}
+
+.reveal.active {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* --- RESPONSIVIDADE (MOBILE-FIRST) --- */
+@media (max-width: 768px) {
+    .hamburger { display: flex; }
+    
+    .nav-links {
+        position: fixed;
+        top: 0;
+        right: -100%;
+        height: 100vh;
+        width: 100%;
+        background: var(--bg-main);
+        flex-direction: column;
+        justify-content: center;
+        gap: 30px;
+        transition: 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    .nav-links.active {
+        right: 0;
+    }
+
+    .grid-2 {
+        grid-template-columns: 1fr;
+        gap: 40px;
+        text-align: center;
+    }
+
+    h1 { font-size: 2.8rem !important; }
+}
+
+/* Animação para o Hamburguer aberto */
+.hamburger.open span:nth-child(1) { transform: rotate(45deg) translateY(10px); }
+.hamburger.open span:nth-child(2) { opacity: 0; }
+.hamburger.open span:nth-child(3) { transform: rotate(-45deg) translateY(-10px); }
