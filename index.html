@@ -3,100 +3,35 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>LinesUp | Inteligência em Performance & Tráfego Pago</title>
-    <!-- Link para o CSS caprichado -->
+    <title>LinesUp | Performance</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-    <!-- NAVEGAÇÃO SUPERIOR -->
     <nav>
         <div class="nav-container">
+            <!-- Link da Logo corrigido -->
             <a href="index.html" class="logo-link">
-                <img src="images/LOGO.png" alt="LinesUp Logo">
+                <img src="images/LOGO.png" alt="LinesUp" class="logo-img">
             </a>
             
-            <!-- Botão Hamburguer para Mobile -->
-            <div class="hamburger" id="hamburger">
-                <span></span>
-                <span></span>
-                <span></span>
-            </div>
-
-            <ul class="nav-links" id="nav-links">
+            <!-- Menu sem as bolinhas (configurado no CSS) -->
+            <ul class="nav-links">
                 <li><a href="sobre.html">Agência</a></li>
                 <li><a href="servicos.html">Serviços</a></li>
                 <li><a href="casos.html">Cases</a></li>
                 <li><a href="blog.html">Blog</a></li>
-                <li><a href="agendamento.html" class="btn">Agendar Consultoria</a></li>
+                <li><a href="agendamento.html" class="btn-nav">Agendar Consultoria</a></li>
             </ul>
         </div>
     </nav>
 
-    <main>
-        <!-- SEÇÃO HERO (IMPACTO INICIAL) -->
-        <section class="container" style="padding-top: 200px; padding-bottom: 100px;">
-            <div class="grid-2">
-                <div class="reveal">
-                    <h1 style="font-size: clamp(3rem, 7vw, 5rem); line-height: 1;">
-                        ESCALA <br><span class="text-brand">REAL.</span> <br>SEM DESCULPAS.
-                    </h1>
-                    <p style="margin: 40px 0; color: var(--text-muted); max-width: 480px; font-size: 1.1rem; font-weight: 300;">
-                        Dominamos o tráfego pago e a gestão de mídia para transformar o investimento do seu negócio em crescimento previsível e lucrativo.
-                    </p>
-                    <div style="display: flex; gap: 20px;">
-                        <a href="agendamento.html" class="btn">Começar Crescimento</a>
-                        <a href="servicos.html" class="btn btn-outline">Ver Soluções</a>
-                    </div>
-                </div>
-                <div class="reveal" style="position: relative;">
-                    <!-- Imagem das Sócias na pasta images/ -->
-                    <img src="images/DUAS_MULHERES_A_SORRRIR.png" class="img-fluid" alt="Isa e Rayssa - LinesUp">
-                </div>
-            </div>
-        </section>
+    <header class="container reveal">
+        <h1 style="font-size: 4rem; text-align: center; line-height: 1;">
+            O PRÓXIMO NÍVEL DO <br> <span style="color: #F3E0A7">SEU FATURAMENTO.</span>
+        </h1>
+    </header>
 
-        <!-- SEÇÃO DE MÉTRICAS (PROVA SOCIAL RÁPIDA) -->
-        <section style="background: #0c0c0c; border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); padding: 60px 0;">
-            <div class="container" style="display: flex; justify-content: space-between; flex-wrap: wrap; gap: 40px;">
-                <div class="reveal" style="flex: 1; text-align: center;">
-                    <h3 style="font-size: 2.5rem; color: var(--brand);">+12MM</h3>
-                    <p style="font-size: 0.7rem; letter-spacing: 2px; color: var(--text-muted);">GERENCIADOS</p>
-                </div>
-                <div class="reveal" style="flex: 1; text-align: center;">
-                    <h3 style="font-size: 2.5rem; color: var(--brand);">8.4x</h3>
-                    <p style="font-size: 0.7rem; letter-spacing: 2px; color: var(--text-muted);">ROAS MÉDIO</p>
-                </div>
-                <div class="reveal" style="flex: 1; text-align: center;">
-                    <h3 style="font-size: 2.5rem; color: var(--brand);">24/7</h3>
-                    <p style="font-size: 0.7rem; letter-spacing: 2px; color: var(--text-muted);">OTIMIZAÇÃO ATIVA</p>
-                </div>
-            </div>
-        </section>
-
-        <!-- CHAMADA PARA AÇÃO FINAL -->
-        <section class="container reveal" style="text-align: center; padding: 150px 0;">
-            <h2 style="font-size: clamp(2rem, 5vw, 3.5rem); margin-bottom: 40px;">
-                PRONTO PARA O PRÓXIMO <span class="text-brand">NÍVEL?</span>
-            </h2>
-            <p style="color: var(--text-muted); margin-bottom: 50px; max-width: 600px; margin-left: auto; margin-right: auto;">
-                Agende um diagnóstico gratuito com nosso time de especialistas e descubra onde seu negócio está deixando dinheiro na mesa.
-            </p>
-            <a href="agendamento.html" class="btn" style="padding: 20px 50px; font-size: 1rem;">Agendar via WhatsApp</a>
-        </section>
-    </main>
-
-    <!-- FOOTER SIMPLIFICADO -->
-    <footer style="padding: 60px 0; border-top: 1px solid var(--border); text-align: center;">
-        <div class="container">
-            <img src="images/LOGO.png" alt="Logo" style="height: 25px; opacity: 0.5; margin-bottom: 20px;">
-            <p style="font-size: 0.7rem; color: var(--text-muted); letter-spacing: 1px;">
-                &copy; 2024 LINESUP PERFORMANCE. TODOS OS DIREITOS RESERVADOS.
-            </p>
-        </div>
-    </footer>
-
-    <!-- Script para funcionamento do Menu e Animações -->
-    <script src="assets/js/script.js"></script>
+    <script src="js/script.js"></script>
 </body>
 </html>
