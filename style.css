@@ -1,0 +1,95 @@
+:root {
+    --brand: #F3E0A7; /* Amarelo Manteiga Principal */
+    --bg-dark: #0A0A0A;
+    --card-bg: #141414;
+    --text-main: #FFFFFF;
+    --text-muted: #A0A0A0;
+    --font-heading: 'Space Grotesk', sans-serif;
+    --font-body: 'Inter', sans-serif;
+    --transition: all 0.5s cubic-bezier(0.19, 1, 0.22, 1);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: var(--bg-dark);
+    color: var(--text-main);
+    font-family: var(--font-body);
+    line-height: 1.6;
+    overflow-x: hidden;
+    -webkit-font-smoothing: antialiased;
+}
+
+/* Tipografia */
+h1, h2, h3 { font-family: var(--font-heading); text-transform: uppercase; letter-spacing: -0.02em; }
+.text-brand { color: var(--brand); }
+
+.container { max-width: 1300px; margin: 0 auto; padding: 0 5%; }
+
+/* Navegação Premium */
+nav {
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+    padding: 30px 0;
+    background: linear-gradient(to bottom, rgba(10,10,10,0.8), transparent);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid rgba(243, 224, 167, 0.1);
+}
+
+.nav-content { display: flex; justify-content: space-between; align-items: center; }
+.logo { font-family: var(--font-heading); font-weight: 700; font-size: 1.5rem; color: var(--brand); text-decoration: none; }
+.nav-links { display: flex; gap: 40px; }
+.nav-links a { color: var(--text-main); text-decoration: none; font-size: 0.85rem; text-transform: uppercase; letter-spacing: 1px; transition: var(--transition); }
+.nav-links a:hover { color: var(--brand); }
+
+/* Botões Modernos */
+.btn {
+    padding: 18px 40px;
+    background: var(--brand);
+    color: #000;
+    font-weight: 700;
+    text-transform: uppercase;
+    font-size: 0.8rem;
+    letter-spacing: 1px;
+    border: none;
+    cursor: pointer;
+    transition: var(--transition);
+    display: inline-block;
+    text-decoration: none;
+}
+.btn:hover { transform: scale(1.05); filter: brightness(1.1); }
+
+.btn-outline {
+    background: transparent;
+    border: 1px solid var(--brand);
+    color: var(--brand);
+}
+
+/* Seções */
+section { padding: 140px 0; }
+.reveal { opacity: 0; transform: translateY(40px); transition: var(--transition); }
+.reveal.active { opacity: 1; transform: translateY(0); }
+
+/* Grid de Serviços/Cases */
+.grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); gap: 30px; }
+.card {
+    background: var(--card-bg);
+    padding: 60px 40px;
+    border: 1px solid rgba(243, 224, 167, 0.05);
+    transition: var(--transition);
+}
+.card:hover { border-color: var(--brand); transform: translateY(-10px); }
+
+/* Footer */
+footer { padding: 80px 0; border-top: 1px solid rgba(243, 224, 167, 0.1); text-align: center; color: var(--text-muted); }
+
+@media (max-width: 768px) {
+    .nav-links { display: none; }
+    h1 { font-size: 3rem; }
+}
