@@ -3,20 +3,16 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>LinesUp | Inteligência em Performance</title>
-    <!-- Carregando Fontes do Google -->
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&family=Space+Grotesk:wght@300;500&display=swap" rel="stylesheet">
+    <title>LinesUp | Performance Digital</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
     <nav>
         <div class="nav-container">
-            <a href="index.html" class="logo-link">
-                <!-- Verifique se o nome é LOGO.png ou LOGO.PNG no seu GitHub -->
-                <img src="assets/js/LOGO.png" alt="LinesUp" class="logo-img" style="display: block !important; min-width: 100px;">
+            <a href="index.html">
+                <img src="assets/js/LOGO.png" alt="LinesUp" class="logo-img">
             </a>
-            
             <ul class="nav-links">
                 <li><a href="sobre.html">Agência</a></li>
                 <li><a href="servicos.html">Serviços</a></li>
@@ -27,24 +23,37 @@
         </div>
     </nav>
 
-    <header style="padding-top: 180px; text-align: center; max-width: 1000px; margin: 0 auto;">
-        <h1 style="font-size: clamp(2rem, 8vw, 4.5rem); line-height: 1.1; margin-bottom: 40px;">
-            O PRÓXIMO NÍVEL DO <br> <span style="color: #F3E0A7">SEU FATURAMENTO.</span>
-        </h1>
-        
-        <!-- Imagem Principal -->
-        <div style="padding: 0 5%;">
-            <img src="assets/js/RAYSSA1.png" alt="Sócias" style="width: 100%; border-radius: 4px; box-shadow: 0 20px 40px rgba(0,0,0,0.5);">
-        </div>
-    </header>
+    <main class="container">
+        <!-- HERO SECTION: Equilíbrio entre texto e imagem -->
+        <section class="hero-grid">
+            <div class="hero-text">
+                <h1>O Próximo Nível do <br><span style="color: #F3E0A7">Seu Faturamento.</span></h1>
+                <p style="color: #888; margin-bottom: 30px; max-width: 450px;">
+                    Sua operação de tráfego levada a sério. Estratégias de performance desenhadas para escala e lucro real.
+                </p>
+                <a href="agendamento.html" class="btn-nav" style="padding: 15px 30px; font-size: 0.8rem;">Quero escalar meu negócio</a>
+            </div>
+            
+            <div class="hero-image">
+                <img src="assets/js/DUAS_MULHERES_A_SORRIR.png" alt="Estrategistas LinesUp">
+            </div>
+        </section>
 
-    <header>
+        <!-- Seção Adicional para dar respiro (UX) -->
+        <section style="padding: 100px 0; text-align: center;">
+            <h2 style="font-family: 'Space Grotesk'; font-weight: 300; font-size: 2rem;">
+                ESCALA <span style="color: #F3E0A7">REAL</span>.
+            </h2>
+            <p style="color: #555; margin-top: 10px;">Análise de dados. Gestão de mídia. Resultados consistentes.</p>
+        </section>
+    </main>
+
+    <footer>
         <div class="container">
-            <h1>ESCALA <span class="text-brand">REAL.</span></h1>
-            <p style="margin-top: 20px; color: #888; font-size: 1.2rem;">Sua operação de tráfego levada a sério.</p>
-            <img src="assets/js/ISA1.png" alt="Sócias" style="width: 100%; max-width: 800px; margin-top: 50px; border-radius: 8px;">
+            <p>&copy; 2024 LinesUp Inteligência em Performance. Todos os direitos reservados.</p>
         </div>
-    </header>
+    </footer>
 
+    <script src="assets/js/script.js"></script>
 </body>
 </html>
